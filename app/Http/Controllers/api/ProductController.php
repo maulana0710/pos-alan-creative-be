@@ -39,6 +39,20 @@ class ProductController extends Controller
                 ->withMessage($th->getMessage())
                 ->build();
         }
+    
+    }
+    public function allProducts(Request $request)
+    {
+        try {
+            $products = Product::all();
+            return ResponseBuilder::asSuccess()
+                ->withData($products)
+                ->build();
+        } catch (\Throwable $th) {
+            return ResponseBuilder::asError(500)
+                ->withMessage($th->getMessage())
+                ->build();
+        }
     }
     public function allProductWithDeleted(Request $request)
     {

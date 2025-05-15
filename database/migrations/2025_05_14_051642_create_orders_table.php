@@ -16,8 +16,10 @@ return new class extends Migration
             $table->uuid('uuid')->unique()->nullable();
             $table->string('orderno')->unique()->nullable();
             $table->enum('status', array('success', 'pending', 'cancel'))->default('pending');
+            $table->integer('qty');
             $table->string('total_payment')->nullable();
             $table->string('grand_total')->nullable();
+            $table->string('change')->nullable()->default(0);
             $table->timestamps();
             $table->softDeletes();
         });
