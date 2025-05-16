@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\api\OrderController;
+use App\Http\Controllers\api\OrderLabelController;
 use App\Http\Controllers\api\ProductController;
-use App\Http\Controllers\OrderLabelController;
 
 Route::prefix('v1')->group(function () {
   Route::prefix('app')->group(function () {

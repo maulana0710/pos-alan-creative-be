@@ -92,7 +92,7 @@ class ProductController extends Controller
             $requestData = $request->validate([
                 'name' => 'required|string|max:255',
                 'price' => 'required|string',
-                'image' => 'nullable|file|mimes:jpg,png,jpeg',
+                'image' => 'nullable|file|max:5048',
             ]);
             if ($request->hasFile('image')) {
                 $fileName = UploadFileService::upload($request->image, 'product');
